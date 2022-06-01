@@ -1,0 +1,17 @@
+html {
+    display: table;
+    margin: auto;
+}
+
+h1, p{
+  text-align: center;
+}
+
+input[type="submit"]{
+  margin: 0.75em auto;
+  display: block;
+  width: 150px;
+  background-color: gray;
+  color: white;
+}
+
