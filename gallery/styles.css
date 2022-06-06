@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Lucida Console";
+    font-weight: bold;
+    background: #EBE7E7;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 32px;
+    
+
+    background: #E0DDDD;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+  
+  #gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4px;
+  }
+
+  a{
+    text-decoration: none;
+    color:royalblue;
+  }
+
+  a:hover {
+    text-decoration:underline;
+    
+  }
+
+  #gallery img {
+    width: 25%;
+    height: 400px;
+    object-fit: cover;
+    margin-top: 8px;
+    padding: 0 4px;
+    border-radius: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    #gallery img {
+      width: 50%;
+    }
+  }
