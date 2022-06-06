@@ -30,7 +30,7 @@
 
   a{
     text-decoration: none;
-    color:royalblue;
+    color:darkgray;
   }
 
   a:hover {
@@ -52,3 +52,9 @@
       width: 50%;
     }
   }
+
+@media (max-width: 800px) {
+  #gallery img {
+    width: 100%;
+  }
+}
