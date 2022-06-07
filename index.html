@@ -24,11 +24,37 @@
             display: table;
             margin: 0 auto;  
         }
+        #button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        #button{
+            background-color: transparent;
+            border: none;
+            background: none;
+            cursor: pointer;
+            background-repeat:no-repeat;
+            width: 50px;
+            height: auto;
+        }
+        #button:hover{
+            background-color: transparent;
+            color: transparent;
+            border: none;
+            background: none;
+        }
+        
+        .dark-mode {
+            background-color: #202020;
+            color: white;
+            }
     </style>
 </head>
 <body>
     <header>
         <h1 class="page-header">Paolo Fiol</h1>
+        <button onclick="myFunction()" id="button"><img src="https://icons.iconarchive.com/icons/icons8/ios7/72/Weather-Sun-icon.png"/></button>
         <img src="./me.jpg" alt="Paolo Fiol">
     </header>
     <main>
@@ -51,5 +77,11 @@
             </ul>
         </section>
     </main>
+    <script>
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
 </body>
 </html>
