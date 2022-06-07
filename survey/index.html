@@ -10,6 +10,7 @@
   </head>
   <body>
     <h1  id="title"><a href="https://paolofiol.github.io">Paolo Fiol</a></h1>
+    <button onclick="myFunction()" id="button"><img src="https://icons.iconarchive.com/icons/icons8/ios7/72/Weather-Sun-icon.png"/></button>
     <h4 id="description">Contact Form</h4>
     <form id="survey-form" action="https://formsubmit.co/paolo.fiol97@gmail.com" method="POST">
       <fieldset>
@@ -36,6 +37,12 @@
       </fieldset>
       <input id="submit" type="submit" value="Submit" />
     </form>
+    <script>
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
   </body>
 
 </html>
