@@ -11,6 +11,7 @@
   <body>
     <div class="header">
       <h1><a href="https://paolofiol.github.io">Paolo Fiol</a></h1>
+      <button onclick="myFunction()" id="button"><img src="https://icons.iconarchive.com/icons/icons8/ios7/72/Weather-Sun-icon.png"/></button>
       <h2>Photo Gallery</h2>
     </div>
     <div id="gallery">
@@ -26,5 +27,11 @@
       <img src="./stadium.jpg"/>
       <img src="./wynwood.png"/>
     </div>
+    <script>
+        function myFunction() {
+           var element = document.body;
+           element.classList.toggle("dark-mode");
+        }
+        </script>
   </body>
 </html>
