@@ -8,6 +8,16 @@
     <link rel="shortcut icon" href="./my_fruit.ico">
     <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
     <style>
+        .border{
+            border-color:lightgray;
+            border-style: solid; 
+            padding: auto;
+            margin-bottom: 38px; 
+            border-width: 2.5px;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+        }
         img {
             margin-top: 28px;
             border-radius: 50%;
@@ -26,8 +36,8 @@
         }
         #button{
             position: absolute;
-            top: -10px;
-            right: -5px;
+            top: -18px;
+            right: -10px;
             margin-right: 20px;
         }
         #button{
@@ -49,6 +59,7 @@
         .dark-mode {
             background-color: #202020;
             color: white;
+            
             }
     </style>
 </head>
@@ -59,10 +70,11 @@
         <img src="./me.jpg" alt="Paolo Fiol">
     </header>
     <main>
-        <fieldset style="border-top: none; border-left: none; border-right: none; border-color:white; padding-bottom: 0; margin-bottom: 25px; border-width: 7px;"><p>Welcome to my website</p></fieldset>
+        <div class="border"><fieldset style="border: none; padding-bottom: 0; margin-bottom: 25px; border-width: 7px;"><p>Welcome to my website</p></fieldset></div>
         
+        <div class="border">
         <section>
-            <fieldset style="border-top: none; border-left: none; border-right: none; border-color:white; padding-bottom: 25px; margin-bottom: 25px; border-width: 7px;">
+            <fieldset style="border: none; border-color:white; padding-bottom: 25px; margin-bottom: 25px; border-width: 7px;">
             <ul style="list-style: none;">
                 <li>
                     <a href="./paolofiol_resume.docx">Resume</a> 
@@ -79,6 +91,7 @@
             </ul>
             </fieldset>
         </section>
+        </div>
     </main>
     <script>
         function myFunction() {
