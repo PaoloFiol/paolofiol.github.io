@@ -63,6 +63,7 @@
             top: 0px;
             right: 0px;
             margin-right: 20px;
+            padding-right:40px;
             
         }
         #button{
@@ -71,7 +72,7 @@
             background: none;
             cursor: pointer;
             background-repeat:no-repeat;
-            width: 30px;
+            width: 15px;
             height: auto;
         }
         #button:hover{
