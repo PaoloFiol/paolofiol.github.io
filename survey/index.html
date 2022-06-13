@@ -17,11 +17,12 @@
 	<input type="hidden" name="_autoresponse" value="Thank you, your message has been received! I will respond to you shortly.">
         <label id="name-label">Name: <input id="name" type="text" name="name" placeholder="Enter your name" required/></label>
         <label id="email-label">Email: <input id="email" type="email" name="email" placeholder="Enter your Email" required/></label>
-        <label id="number-label">Age: <input id="number" type="number" name="age" min="1" max="120" placeholder="Age" required/></label>
+        
         <label>Which option best describes you?
           <select id="dropdown" name="description" required>
             <option value="">Select an option</option>
             <option value="developer" name="developer">Developer</option>
+	    <option value="recruiter" name="recruiter">Recruiter</option>
             <option value="student" name="student">Student</option>
             <option value="other" name="other">Other</option>
           </select>
@@ -31,8 +32,8 @@
           <label><input type="radio" name="option" id="not sure" value="not sure"/>Not sure</label>
         </label>
         
-        <label>Any comments or suggestions?
-          <textarea name="comments" rows="15" cols="30" placeholder="Enter additional comments here..."></textarea>
+        <label>Enter message
+          <textarea name="comments" rows="15" cols="30" placeholder="Message goes here..."></textarea>
 			  </label>
       </fieldset>
       <input id="submit" type="submit" value="Submit" />
