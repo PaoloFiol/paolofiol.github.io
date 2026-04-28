@@ -20,6 +20,7 @@
             border-right: none;
             border-top: none;
         }
+
         img {
             margin-top: 28px;
             border-radius: 50%;
@@ -27,26 +28,26 @@
             margin-right: auto;
             width: 200px;
             display: block;
-            
         }
-        h1, h5,h6,img, p, section, ul, li{
+
+        h1, h5, h6, img, p, section, ul, li{
             text-align: center;
         }
+
         #bio{
             text-align: left;
-         
         }
+
         ul{
             display: table;
             margin: 0 auto;  
         }
+
         #button{
             position: absolute;
             top: -18px;
             right: -10px;
             margin-right: 20px;
-        }
-        #button{
             background-color: transparent;
             border: none;
             background: none;
@@ -55,71 +56,109 @@
             width: 50px;
             height: auto;
         }
+
         #button:hover{
             background-color: transparent;
             color: transparent;
             border: none;
             background: none;
         }
+
+        .links-container {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .links-column {
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .links-column ul {
+            padding-left: 0;
+        }
+
+        .links-column li {
+            margin-bottom: 8px;
+        }
         
         .dark-mode {
             background-color: #202020;
             color: white;
-            
-            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1 class="page-header">Paolo Fiol</h1>
-        <button onclick="myFunction()" id="button"><img src="https://icons.iconarchive.com/icons/icons8/ios7/72/Weather-Sun-icon.png"/></button>
+        <button onclick="myFunction()" id="button">
+            <img src="https://icons.iconarchive.com/icons/icons8/ios7/72/Weather-Sun-icon.png" alt="Toggle dark mode"/>
+        </button>
         <img src="./Paolo Selfie_processed.jpg" alt="Paolo Fiol">
     </header>
+
     <main>
         <div class="border">
             <fieldset style="border: none; padding-bottom: 0; margin-bottom: 25px; border-width: 7px;">
                 <h5>Welcome</h5>
-                <p id="bio">I am a software developer, and a graduate of the <a href="https://www.ufl.edu/" target="_blank">University of Florida</a> (BS in Computer Science). 
-                    My work experience includes code analysis and debugging, database management, analysis of application logs for troubleshooting, and managing 
-                    continuous integration and continuous deployment (CI/CD) pipelines in software development. Also, I have worked on some pet projects using the MERN stack which 
-                    can be found on my <a href="https://github.com/PaoloFiol" target="_blank">Github</a>. Apart from coding, I enjoy hobbies such as soccer, weight-training, and gaming.
+                <p id="bio">
+                    I am a software engineer and graduate of the <a href="https://www.ufl.edu/" target="_blank">University of Florida</a> with a BS in Computer Science. 
+                    My professional experience includes full-stack application development, code analysis & debugging, database management, APIs, and CI/CD pipeline support in enterprise software environments. 
+                    I also build full-stack projects using the MERN stack, which can be found on my <a href="https://github.com/PaoloFiol" target="_blank">Github</a>, and I have been actively working with AI tools to improve development workflows, troubleshoot faster, generate documentation, research solutions, and prototype AI-assisted features. 
+                    I enjoy solving technical problems, learning new technologies, and building practical applications that are reliable, user-focused, and scalable.
                 </p>
             </fieldset>
         </div>
         
         <div class="border">
-        <section>
-            <fieldset style="border: none; border-color:white; padding-bottom: 25px; margin-bottom: 25px; border-width: 7px;">
-            <ul style="list-style: none;">
-                <li>
-                    <a href="./Paolo Fiol Resume 2026.pdf" download="Paolo Fiol Resume 2026.pdf">Resume <i class="fas fa-download"></i></a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/paolo-fiol-672a49156/" target="_blank">LinkedIn</a> 
-                </li>
-                <li>
-                    <a href="https://github.com/PaoloFiol" target="_blank">Github</a> 
-                </li>
-                  <li>
-                    <a href="https://social-network-app-pi.vercel.app/" target="_blank">Social Network App</a>
-                </li>
-                 <li>
-                    <a href="https://marketplaceapp-lyart.vercel.app/" target="_blank">Marketplace App</a>
-                </li>
-                <li>
-                    <a href="survey/index.html">Contact</a>
-                </li>
-            </ul>
-            </fieldset>
-        </section>
+            <section>
+                <fieldset style="border: none; border-color:white; padding-bottom: 25px; margin-bottom: 25px; border-width: 7px;">
+                    <div class="links-container">
+                        <div class="links-column">
+                            <h5>Links:</h5>
+                            <ul style="list-style: none;">
+                                <li>
+                                    <a href="./Paolo Fiol Resume 2026.pdf" download="Paolo Fiol Resume 2026.pdf">
+                                        Resume <i class="fas fa-download"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/paolo-fiol-672a49156/" target="_blank">LinkedIn</a> 
+                                </li>
+                                <li>
+                                    <a href="https://github.com/PaoloFiol" target="_blank">Github</a> 
+                                </li>
+                                <li>
+                                    <a href="survey/index.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="links-column">
+                            <h5>Projects:</h5>
+                            <ul style="list-style: none;">
+                                <li>
+                                    <a href="https://social-network-app-pi.vercel.app/" target="_blank">Social Network App</a>
+                                </li>
+                                <li>
+                                    <a href="https://marketplaceapp-lyart.vercel.app/" target="_blank">Marketplace App</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </fieldset>
+            </section>
         </div>
     </main>
+
     <script>
         function myFunction() {
            var element = document.body;
            element.classList.toggle("dark-mode");
         }
-        </script>
+    </script>
 </body>
 </html>
-
