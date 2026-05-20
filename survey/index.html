@@ -1,49 +1,163 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Contact Form</title>
-    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
-    <link rel="stylesheet" href="styles.css">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Paolo Fiol for software engineering opportunities, collaborations, and portfolio inquiries.">
+    <title>Contact Paolo Fiol | Software Engineer</title>
     <link rel="shortcut icon" href="./my_fruit.ico">
-  </head>
-  <body>
-    <h1  id="title"><a href="https://paolofiol.github.io">Paolo Fiol</a></h1>
-    <button onclick="myFunction()" id="button"><img src="https://icons.iconarchive.com/icons/icons8/ios7/72/Weather-Sun-icon.png"/></button>
-    <h4 id="description">Contact Form</h4>
-    <form id="survey-form" action="https://formsubmit.co/paolo.fiol97@gmail.com" method="POST">
-      <fieldset>
-	<input type="hidden" name="_autoresponse" value="Thank you, your message has been received! I will respond to you shortly.">
-        <label id="name-label">Name: <input id="name" type="text" name="name" placeholder="Enter your name" required/></label>
-        <label id="email-label">Email: <input id="email" type="email" name="email" placeholder="Enter your Email" required/></label>
-        
-        <label>Which option best describes you?
-          <select id="dropdown" name="description" required>
-            <option value="">Select an option</option>
-            <option value="developer" name="developer">Developer</option>
-	    <option value="recruiter" name="recruiter">Recruiter</option>
-            <option value="student" name="student">Student</option>
-            <option value="other" name="other">Other</option>
-          </select>
-        <label>Do you like this website?
-          <label><input type="radio" name="option" id="yes" value="yes"/>Yes</label>
-          <label><input type="radio" name="option" id="maybe" value="maybe"/>Maybe</label>
-          <label><input type="radio" name="option" id="not sure" value="not sure"/>Rather not answer...</label>
-        </label>
-        
-        <label>Enter message
-          <textarea name="comments" rows="15" cols="30" placeholder="Message goes here..."></textarea>
-			  </label>
-      </fieldset>
-      <input id="submit" type="submit" value="Submit" />
-    </form>
-    <script>
-        function myFunction() {
-           var element = document.body;
-           element.classList.toggle("dark-mode");
-        }
-        </script>
-  </body>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root { color-scheme: light; --bg: #f4f7fb; --surface: #fbfdff; --surface-strong: #ffffff; --ink: #172133; --muted: #647184; --line: rgba(23, 33, 51, 0.13); --accent: #2d6cdf; --accent-strong: #1f56b3; --accent-soft: #e8f0ff; --warm: #c27a3f; --danger: #b54747; --shadow: 0 22px 60px rgba(32, 52, 86, 0.13); --radius: 8px; --max-width: 980px; }
+        body.dark-mode { color-scheme: dark; --bg: #101722; --surface: #151f2d; --surface-strong: #1d2a3b; --ink: #f2f6ff; --muted: #b6c3d6; --line: rgba(242, 246, 255, 0.14); --accent: #7aa7ff; --accent-strong: #9bbdff; --accent-soft: rgba(122, 167, 255, 0.14); --warm: #dfa56e; --danger: #ff9b9b; --shadow: 0 22px 70px rgba(0, 0, 0, 0.3); }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { margin: 0; min-height: 100vh; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; color: var(--ink); background: radial-gradient(circle at 14% 12%, rgba(45, 108, 223, 0.13), transparent 28rem), radial-gradient(circle at 82% 6%, rgba(194, 122, 63, 0.1), transparent 24rem), var(--bg); transition: background-color 180ms ease, color 180ms ease; }
+        a { color: var(--accent-strong); font-weight: 700; text-decoration: none; }
+        a:hover { text-decoration: underline; text-underline-offset: 0.22em; }
+        .page-shell { width: min(var(--max-width), calc(100% - 32px)); margin: 0 auto; }
+        .site-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 24px 0 16px; }
+        .brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 800; letter-spacing: 0; }
+        .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; color: #ffffff; background: linear-gradient(135deg, var(--accent), var(--warm)); box-shadow: 0 10px 26px rgba(45, 108, 223, 0.24); }
+        .nav-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+        .nav-link { color: var(--muted); font-size: 0.94rem; font-weight: 700; }
+        .icon-button { display: inline-grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: var(--surface); cursor: pointer; transition: transform 150ms ease, border-color 150ms ease, background-color 150ms ease; }
+        .icon-button:hover { transform: translateY(-1px); border-color: rgba(45, 108, 223, 0.45); }
+        .hero { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.15fr); gap: 34px; align-items: start; padding: 58px 0 54px; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 16px; color: var(--accent-strong); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+        .eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--warm); }
+        h1 { margin: 0; color: var(--accent-strong); font-size: clamp(3.2rem, 9vw, 6.2rem); line-height: 0.98; letter-spacing: 0; }
+        .hero-title { margin: 14px 0 0; color: var(--ink); font-size: clamp(1.45rem, 3vw, 2.1rem); font-weight: 850; line-height: 1.14; }
+        .hero-copy { max-width: 540px; margin: 22px 0 0; color: var(--muted); font-size: clamp(1.02rem, 2vw, 1.15rem); }
+        .contact-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+        .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 0 18px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: var(--surface); font-weight: 800; box-shadow: 0 10px 24px rgba(23, 32, 38, 0.06); transition: transform 150ms ease, border-color 150ms ease, background-color 150ms ease; }
+        .button:hover { transform: translateY(-1px); text-decoration: none; border-color: rgba(45, 108, 223, 0.5); }
+        .form-card { padding: 28px; border: 1px solid var(--line); border-radius: var(--radius); background: color-mix(in srgb, var(--surface) 90%, transparent); box-shadow: var(--shadow); }
+        form { display: grid; gap: 18px; }
+        fieldset { display: grid; gap: 18px; margin: 0; padding: 0; border: 0; }
+        .field { display: grid; gap: 8px; }
+        label, legend { color: var(--ink); font-size: 0.96rem; font-weight: 800; }
+        .required { color: var(--danger); }
+        input, select, textarea { width: 100%; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); background: var(--surface-strong); font: inherit; outline: none; transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease; }
+        input, select { min-height: 48px; padding: 0 14px; }
+        textarea { min-height: 178px; padding: 13px 14px; resize: vertical; }
+        input:focus, select:focus, textarea:focus { border-color: rgba(45, 108, 223, 0.72); box-shadow: 0 0 0 4px var(--accent-soft); }
+        .choice-group { display: grid; gap: 10px; }
+        .choice-row { display: flex; flex-wrap: wrap; gap: 10px; }
+        .choice { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 12px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--muted); background: var(--surface-strong); font-size: 0.94rem; font-weight: 750; cursor: pointer; }
+        .choice input { width: auto; min-height: auto; margin: 0; accent-color: var(--accent-strong); }
+        .submit-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; width: 100%; border: 0; border-radius: var(--radius); color: #ffffff; background: var(--accent-strong); font: inherit; font-weight: 900; cursor: pointer; transition: transform 150ms ease, filter 150ms ease; }
+        .submit-button:hover { transform: translateY(-1px); filter: brightness(1.04); }
+        body.dark-mode .submit-button { color: #0d1517; }
+        .privacy-note { margin: 0; color: var(--muted); font-size: 0.9rem; }
+        footer { padding: 24px 0 42px; color: var(--muted); font-size: 0.92rem; text-align: center; }
+        @media (max-width: 820px) { .hero { grid-template-columns: 1fr; padding-top: 34px; } .form-card { max-width: 680px; } }
+        @media (max-width: 620px) { .site-nav { align-items: flex-start; flex-direction: column; } .nav-actions { justify-content: flex-start; } .nav-link { display: none; } .contact-links, .choice-row { flex-direction: column; align-items: stretch; } .button { width: 100%; } .form-card { padding: 22px; } }
+    </style>
+</head>
+<body>
+    <div class="page-shell">
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a class="brand" href="https://paolofiol.github.io" aria-label="Paolo Fiol home">
+                <span class="brand-mark">PF</span>
+                <span>Paolo Fiol</span>
+            </a>
+            <div class="nav-actions">
+                <a class="nav-link" href="https://paolofiol.github.io">Portfolio</a>
+                <a class="nav-link" href="https://github.com/PaoloFiol" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a class="nav-link" href="https://www.linkedin.com/in/paolo-fiol-672a49156/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <button class="icon-button" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode">
+                    <i class="fas fa-adjust" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
 
+        <main class="hero">
+            <section aria-labelledby="contact-title">
+                <p class="eyebrow">Contact</p>
+                <h1 id="contact-title">Let's connect.</h1>
+                <p class="hero-title">Software engineering opportunities, project questions, or collaboration ideas.</p>
+                <p class="hero-copy">Send a quick note and I will get back to you shortly. Recruiters and hiring managers are welcome to include role details, location, tech stack, and timeline.</p>
+                <div class="contact-links">
+                    <a class="button" href="https://paolofiol.github.io">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        Portfolio
+                    </a>
+                    <a class="button" href="https://www.linkedin.com/in/paolo-fiol-672a49156/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </section>
+
+            <section class="form-card" aria-label="Contact form">
+                <form id="survey-form" action="https://formsubmit.co/paolo.fiol97@gmail.com" method="POST">
+                    <input type="hidden" name="_autoresponse" value="Thank you, your message has been received! I will respond to you shortly.">
+                    <fieldset>
+                        <div class="field">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input id="name" type="text" name="name" placeholder="Enter your name" autocomplete="name" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input id="email" type="email" name="email" placeholder="Enter your email" autocomplete="email" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="dropdown">Which option best describes you? <span class="required">*</span></label>
+                            <select id="dropdown" name="description" required>
+                                <option value="">Select an option</option>
+                                <option value="developer">Developer</option>
+                                <option value="recruiter">Recruiter</option>
+                                <option value="student">Student</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="choice-group">
+                            <legend>Do you like this website?</legend>
+                            <div class="choice-row">
+                                <label class="choice" for="yes"><input type="radio" name="website_feedback" id="yes" value="yes"> Yes</label>
+                                <label class="choice" for="maybe"><input type="radio" name="website_feedback" id="maybe" value="maybe"> Maybe</label>
+                                <label class="choice" for="not-sure"><input type="radio" name="website_feedback" id="not-sure" value="not sure"> Rather not answer</label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="comments">Message <span class="required">*</span></label>
+                            <textarea id="comments" name="comments" rows="8" placeholder="Message goes here..." required></textarea>
+                        </div>
+                    </fieldset>
+
+                    <button class="submit-button" id="submit" type="submit">
+                        Send message
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                    <p class="privacy-note">Your message is sent through FormSubmit to Paolo's email.</p>
+                </form>
+            </section>
+        </main>
+
+        <footer><span id="year"></span> Paolo Fiol. Thanks for reaching out.</footer>
+    </div>
+
+    <script>
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const savedTheme = localStorage.getItem("theme");
+
+        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+            document.body.classList.add("dark-mode");
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+        }
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
 </html>
