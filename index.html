@@ -55,7 +55,7 @@
         .signal { min-height: 104px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface-strong); }
         .signal strong { display: block; margin-bottom: 6px; font-size: 0.98rem; }
         .signal span { color: var(--muted); font-size: 0.92rem; }
-        .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
         .project-card { display: flex; flex-direction: column; min-height: 270px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 12px 34px rgba(23, 32, 38, 0.07); transition: transform 150ms ease, border-color 150ms ease; }
         .project-card:hover { transform: translateY(-3px); border-color: rgba(45, 108, 223, 0.48); }
         .project-icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 18px; border-radius: var(--radius); color: var(--accent-strong); background: var(--accent-soft); }
@@ -84,6 +84,7 @@
                 <button class="icon-button" type="button" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle dark mode"><i class="fas fa-adjust" aria-hidden="true"></i></button>
             </div>
         </nav>
+
         <header class="hero" id="top">
             <div>
                 <p class="eyebrow">Welcome</p>
@@ -96,6 +97,7 @@
                     <a class="button" href="https://www.linkedin.com/in/paolo-fiol-672a49156/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin" aria-hidden="true"></i>LinkedIn</a>
                 </div>
             </div>
+
             <aside class="profile-card" aria-label="Profile summary">
                 <div class="portrait-wrap"><img class="portrait" src="./Paolo Selfie_processed.jpg" alt="Paolo Fiol"></div>
                 <ul class="quick-facts">
@@ -105,6 +107,7 @@
                 </ul>
             </aside>
         </header>
+
         <main>
             <section class="section" id="about">
                 <div class="section-heading"><h2>About</h2><p class="section-note">A quick read for recruiters and hiring managers.</p></div>
@@ -116,25 +119,35 @@
                     <div class="signal"><strong>AI Tools</strong><span>Research, prototyping, docs, troubleshooting, and developer velocity.</span></div>
                 </div>
             </section>
+
             <section class="section" id="projects">
                 <div class="section-heading"><h2>Selected Projects</h2><p class="section-note">A few deployed projects that show product thinking and full-stack execution.</p></div>
                 <div class="projects-grid">
+                    <article class="project-card"><div class="project-icon"><i class="fas fa-heart" aria-hidden="true"></i></div><h3>Our Story</h3><p>A private SaaS app for couples with shared memories, plans, daily questions, partner invites, subscriptions, and a mobile release currently in Google Play closed testing.</p><ul class="tag-list"><li>Next.js</li><li>Expo</li><li>Supabase</li><li>Stripe</li><li>Google Play</li></ul><a class="project-link" href="https://www.ourstory.one/" target="_blank" rel="noopener noreferrer">View project <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></article>
                     <article class="project-card"><div class="project-icon"><i class="fas fa-magic" aria-hidden="true"></i></div><h3>Resume Reframe App</h3><p>An AI-assisted resume tool focused on helping job seekers improve positioning and communicate experience more clearly.</p><ul class="tag-list"><li>AI</li><li>Product UX</li><li>Full-stack</li></ul><a class="project-link" href="https://resume-reframe.com/" target="_blank" rel="noopener noreferrer">View project <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></article>
                     <article class="project-card"><div class="project-icon"><i class="fas fa-users" aria-hidden="true"></i></div><h3>Social Network App</h3><p>A deployed social application with account-oriented flows and interactive user features.</p><ul class="tag-list"><li>MERN</li><li>Auth</li><li>Vercel</li></ul><a class="project-link" href="https://social-network-app-pi.vercel.app/" target="_blank" rel="noopener noreferrer">View project <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></article>
                     <article class="project-card"><div class="project-icon"><i class="fas fa-store" aria-hidden="true"></i></div><h3>Marketplace App</h3><p>A marketplace-style web app showing listing, browsing, and transaction-oriented product flows.</p><ul class="tag-list"><li>Full-stack</li><li>Database</li><li>UX</li></ul><a class="project-link" href="https://marketplaceapp-lyart.vercel.app/" target="_blank" rel="noopener noreferrer">View project <i class="fas fa-external-link-alt" aria-hidden="true"></i></a></article>
                 </div>
             </section>
+
             <section class="section" id="contact">
                 <div class="contact-band"><div><h2>Open to software engineering opportunities.</h2><p>Interested in full-stack engineering, frontend-focused product work, and teams using AI to build better developer workflows.</p></div><div class="hero-actions"><a class="button" href="survey/index.html"><i class="fas fa-envelope" aria-hidden="true"></i>Contact</a><a class="button" href="./Paolo Fiol Resume 2026.pdf" download="Paolo Fiol Resume 2026.pdf"><i class="fas fa-file-download" aria-hidden="true"></i>Resume</a></div></div>
             </section>
         </main>
+
         <footer><span id="year"></span> Paolo Fiol. Built as a fast, static portfolio.</footer>
     </div>
+
     <script>
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme === "dark" || (!savedTheme && prefersDark)) document.body.classList.add("dark-mode");
-        function toggleTheme() { document.body.classList.toggle("dark-mode"); localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light"); }
+
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+        }
+
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
